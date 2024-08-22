@@ -6,6 +6,7 @@ use App\Http\Controllers\MoradorController;
 use App\Http\Controllers\PopularBancoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SindicoController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,6 @@ Route::post('/cadastrarApartamento', [ApartamentoController::class, 'cadastrar']
 
 Route::get('/cadastroRole', [RoleController::class, 'index'])->name('cadastroRole');
 Route::post('/cadastrarRole', [RoleController::class, 'cadastrar'])->name('cadastrarRole');
+
+Route::get('/cadastroUsuario', [UsuarioController::class, 'index'])->name('cadastroUsuario');
+Route::post('/cadastrarUsuario', [UsuarioController::class, 'cadastrar'])->name('cadastrarUsuario');
