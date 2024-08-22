@@ -4,6 +4,7 @@ use App\Http\Controllers\ApartamentoController;
 use App\Http\Controllers\CondominioController;
 use App\Http\Controllers\MoradorController;
 use App\Http\Controllers\PopularBancoController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SindicoController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,7 @@ Route::post('/cadastrarCondominio', [CondominioController::class, 'cadastrar'])-
 
 Route::get('/cadastroApartamento', [ApartamentoController::class, 'index'])->name('cadastroApartamento');
 Route::post('/cadastrarApartamento', [ApartamentoController::class, 'cadastrar'])->name('cadastrarApartamento');
+
+
+Route::get('/cadastroRole', [RoleController::class, 'index'])->name('cadastroRole');
+Route::post('/cadastrarRole', [RoleController::class, 'cadastrar'])->name('cadastrarRole');
