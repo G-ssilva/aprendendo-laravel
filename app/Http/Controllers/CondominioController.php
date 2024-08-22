@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Condominio;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class CondominioController {
+
+	public function index (): View {
+		return view('cadastroCondominio')->with('condominios', Condominio::all());
+	}
+
+	public function cadastrar (Request $request): RedirectResponse {
+
+		$request->validate([
+				'nome' => ['required', 'max:255'],
+				'cep' => ['required', 'unique:condominios', 'digits:8'],
+		]);
+
+		Condominio::create([
+				'nome' => $request->get('nome'),
+				'cep' => $request->get('cep'),
+		]);
+
+		return redirect(route('cadastroCondominio'));
+	}
+
+}
