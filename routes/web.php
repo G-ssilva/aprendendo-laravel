@@ -5,6 +5,7 @@ use App\Http\Controllers\CondominioController;
 use App\Http\Controllers\MoradorController;
 use App\Http\Controllers\PopularBancoController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SindicoAtivoController;
 use App\Http\Controllers\SindicoController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Route::get('/popularBanco', [PopularBancoController::class, 'popularBanco'])->name('popularBanco');
@@ -44,3 +45,6 @@ Route::post('/cadastrarRole', [RoleController::class, 'cadastrar'])->name('cadas
 
 Route::get('/cadastroUsuario', [UsuarioController::class, 'index'])->name('cadastroUsuario');
 Route::post('/cadastrarUsuario', [UsuarioController::class, 'cadastrar'])->name('cadastrarUsuario');
+
+Route::get('/definicaoSindicoAtivo', [SindicoAtivoController::class, 'index'])->name('definicaoSindicoAtivo');
+Route::post('/definirSindicoAtivo', [SindicoAtivoController::class, 'definir'])->name('definirSindicoAtivo');
