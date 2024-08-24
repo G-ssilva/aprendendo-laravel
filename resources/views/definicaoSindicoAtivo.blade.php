@@ -18,6 +18,10 @@
             @endforeach
         </select>
 
+        @error('condominio')
+        <div>{{ $message }}</div>
+        @enderror
+
         <label for="sindico">Sindico:</label>
         <select id="sindico" name="sindico">
             @foreach($sindicos as $sindico)
@@ -26,6 +30,10 @@
                 </option>
             @endforeach
         </select>
+
+        @error('sindico')
+        <div>{{ $message }}</div>
+        @enderror
 
         <input type="submit" value="Cadastrar">
     </form>
