@@ -14,18 +14,17 @@ use App\Models\Usuario;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder {
-    /**
-     * Seed the application's database.
-     */
-    public function run (): void {
-        Apartamento::factory(1)->create();
-        Condominio::factory(1)->create();
-        CondominioSindico::factory(1)->create();
-        Morador::factory(1)->create();
-        Role::factory(1)->create();
-        Sindico::factory(1)->create();
-        Usuario::factory(1)->create();
-        ApartamentoMorador::factory(1)->create();
-        SindicoAtivo::factory(1)->create();
-    }
+	/**
+	 * Seed the application's database.
+	 */
+	public function run(): void {
+		Apartamento::factory(1)->create();
+		Condominio::factory(1)->create();
+		CondominioSindico::factory(1)->create();
+		Morador::factory(1)->create();
+		Role::factory(1)->create();
+		Sindico::factory(1)->create();
+		Usuario::factory(1)->create();
+		ApartamentoMorador::factory(1)->create();
+	}
 }
