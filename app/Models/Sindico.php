@@ -7,20 +7,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Sindico extends Pessoa {
-    use HasFactory;
+	use HasFactory;
 
-    protected $table = 'sindicos';
+	protected $table = 'sindicos';
 
-    protected $fillable = [
-        'nome', 'cpf', 'salario',
-    ];
+	protected $fillable = [
+			'nome', 'cpf', 'salario',
+	];
 
-    public function condominios (): belongsToMany {
-        return $this->belongsToMany(Condominio::class, 'condominio_sindico');
-    }
+	public function condominios(): belongsToMany {
+		return $this->belongsToMany(Condominio::class, 'condominio_sindico');
+	}
 
-    public function condominioAtivo (): hasOne {
-        return $this->hasOne(SindicoAtivo::class, 'sindico_id');
-    }
+	public function condominioAtivo(): hasOne {
+		return $this->hasOne(Condominio::class);
+	}
 
 }
