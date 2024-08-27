@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApartamentoController;
+use App\Http\Controllers\ApartamentoMoradorController;
 use App\Http\Controllers\CondominioController;
 use App\Http\Controllers\MoradorController;
 use App\Http\Controllers\PopularBancoController;
@@ -48,3 +49,6 @@ Route::post('/cadastrarUsuario', [UsuarioController::class, 'cadastrar'])->name(
 
 Route::get('/definicaoSindicoAtivo', [SindicoAtivoController::class, 'index'])->name('definicaoSindicoAtivo');
 Route::post('/definirSindicoAtivo', [SindicoAtivoController::class, 'definir'])->name('definirSindicoAtivo');
+
+Route::get('/vinculoApartamentoMorador', [ApartamentoMoradorController::class, 'index'])->name('vinculoApartamentoMorador');
+Route::post('/vincularApartamentoMorador', [ApartamentoMoradorController::class, 'vincular'])->name('vincularApartamentoMorador');
