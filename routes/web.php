@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApartamentoController;
 use App\Http\Controllers\ApartamentoMoradorController;
 use App\Http\Controllers\CondominioController;
+use App\Http\Controllers\CondominioSindicoController;
 use App\Http\Controllers\MoradorController;
 use App\Http\Controllers\PopularBancoController;
 use App\Http\Controllers\RoleController;
@@ -52,3 +53,6 @@ Route::post('/definirSindicoAtivo', [SindicoAtivoController::class, 'definir'])-
 
 Route::get('/vinculoApartamentoMorador', [ApartamentoMoradorController::class, 'index'])->name('vinculoApartamentoMorador');
 Route::post('/vincularApartamentoMorador', [ApartamentoMoradorController::class, 'vincular'])->name('vincularApartamentoMorador');
+
+Route::get('/vinculoCondominioSindico', [CondominioSindicoController::class, 'index'])->name('vinculoCondominioSindico');
+Route::post('/vincularCondominioSindico', [CondominioSindicoController::class, 'vincular'])->name('vincularCondominioSindico');
