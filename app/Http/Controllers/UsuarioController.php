@@ -22,7 +22,7 @@ class UsuarioController
     {
 
         $request->validate([
-            'login' => ['required', 'max:255'],
+            'login' => ['required', 'max:255', 'unique:usuarios,login'],
             'senha' => ['required', 'max:255'],
             'role' => [function ($attribute, $value, $fail) use ($request) {
                 $exists = Role::query()
