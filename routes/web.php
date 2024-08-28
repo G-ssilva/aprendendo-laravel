@@ -24,7 +24,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('welcome');})->name('welcome');
+Route::get('/', function () {
+	return view('welcome');
+})->name('welcome');
 
 Route::get('/popularBanco', [PopularBancoController::class, 'popularBanco'])->name('popularBanco');
 
@@ -58,3 +60,4 @@ Route::post('/vincularCondominioSindico', [CondominioSindicoController::class, '
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'autenticar'])->name('autenticar');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
