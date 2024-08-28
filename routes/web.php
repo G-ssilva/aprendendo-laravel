@@ -4,6 +4,7 @@ use App\Http\Controllers\ApartamentoController;
 use App\Http\Controllers\ApartamentoMoradorController;
 use App\Http\Controllers\CondominioController;
 use App\Http\Controllers\CondominioSindicoController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MoradorController;
 use App\Http\Controllers\PopularBancoController;
 use App\Http\Controllers\RoleController;
@@ -23,9 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Route::get('/', function () {return view('welcome');})->name('welcome');
 
 Route::get('/popularBanco', [PopularBancoController::class, 'popularBanco'])->name('popularBanco');
 
@@ -56,3 +55,6 @@ Route::post('/vincularApartamentoMorador', [ApartamentoMoradorController::class,
 
 Route::get('/vinculoCondominioSindico', [CondominioSindicoController::class, 'index'])->name('vinculoCondominioSindico');
 Route::post('/vincularCondominioSindico', [CondominioSindicoController::class, 'vincular'])->name('vincularCondominioSindico');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'autenticar'])->name('autenticar');

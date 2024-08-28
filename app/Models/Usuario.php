@@ -8,28 +8,32 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class Usuario extends Authenticatable {
-    use HasFactory, Notifiable;
+	use HasFactory, Notifiable;
 
-    protected $table = 'usuarios';
+	protected $table = 'usuarios';
 
-    protected $fillable = [
-        'login',
-        'senha',
-        'role_id',
-        'ativo'
-    ];
+	protected $fillable = [
+			'login',
+			'senha',
+			'role_id',
+			'ativo'
+	];
 
-    protected $hidden = [
-        'senha',
-    ];
+	protected $hidden = [
+			'senha',
+	];
 
-    public function role (): belongsTo {
-        return $this->belongsTo(Role::class, 'role_id');
-    }
+	public function role(): belongsTo {
+		return $this->belongsTo(Role::class, 'role_id');
+	}
 
-    protected function casts (): array {
-        return [
-            'senha' => 'hashed',
-        ];
-    }
+	protected function casts(): array {
+		return [
+				'senha' => 'hashed',
+		];
+	}
+
+	public function getAuthPassword(): string {
+		return $this->senha;
+	}
 }
