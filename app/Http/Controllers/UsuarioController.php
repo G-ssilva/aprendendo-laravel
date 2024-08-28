@@ -37,7 +37,7 @@ class UsuarioController
 
         Usuario::create([
             'login' => $request->get('login'),
-            'senha' => $request->get('senha'),
+            'senha' => bcrypt($request->get('senha')),
             'role_id' => $request->get('role'),
             'ativo' => true
         ]);
