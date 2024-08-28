@@ -7,13 +7,13 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class SindicoController {
+class SindicoController extends Controller {
 
-	public function index (): View {
+	public function index(): View {
 		return view('cadastroSindico')->with('sindicos', Sindico::all());
 	}
 
-	public function cadastrar (Request $request): RedirectResponse {
+	public function cadastrar(Request $request): RedirectResponse {
 
 		$request->validate([
 				'nome' => ['required', 'max:255'],

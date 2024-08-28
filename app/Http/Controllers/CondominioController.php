@@ -7,13 +7,13 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class CondominioController {
+class CondominioController extends Controller {
 
-	public function index (): View {
+	public function index(): View {
 		return view('cadastroCondominio')->with('condominios', Condominio::all());
 	}
 
-	public function cadastrar (Request $request): RedirectResponse {
+	public function cadastrar(Request $request): RedirectResponse {
 
 		$request->validate([
 				'nome' => ['required', 'max:255'],

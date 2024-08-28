@@ -8,7 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class SindicoAtivoController {
+class SindicoAtivoController extends Controller {
 
 	public function index(): View {
 		$sindicosAtivosIds = Condominio::query()->whereNotNull('sindico_id')->pluck('sindico_id');

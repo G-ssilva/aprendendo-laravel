@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller {
 
+	/** @noinspection PhpMissingParentConstructorInspection */
+	public function __construct() {
+		$this->middleware(function ($request, $next) {
+			return $next($request);
+		});
+	}
+
 	public function index() {
 		return view('login');
 	}
