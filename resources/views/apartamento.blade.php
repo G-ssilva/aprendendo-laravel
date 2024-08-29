@@ -45,7 +45,7 @@
 					@foreach ($apartamentos as $apartamento)
 						<div class="col">
 							<div class="d-flex flex-column p-3 border border-primary-subtle rounded"
-								 style="width: 250px; height: 150px">
+								 style="width: 300px; height: 150px">
 								<span class="fw-bold">Apartamento ID {{ $apartamento->id }}</span>
 								<span class="">Bloco: {{ $apartamento->bloco }}</span>
 								<span class="">Número: {{ $apartamento->numero }}</span>
