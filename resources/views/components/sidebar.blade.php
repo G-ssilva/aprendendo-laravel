@@ -27,7 +27,7 @@
 				</a>
 			</li>
 		@endcan
-		@can(['isAdminOrSindico'], Auth::user())
+		@can('isAdminOrSindico', Auth::user())
 			<li>
 				<a href="#" class="nav-link link-body-emphasis">
 					Sindicos
