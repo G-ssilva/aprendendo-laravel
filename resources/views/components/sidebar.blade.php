@@ -4,52 +4,64 @@
 	</a>
 	<hr>
 	<ul class="nav nav-pills flex-column mb-2">
-		<li class="nav-item">
-			<a href="{{ route('apartamento') }}"
-			   class="nav-link {{ Route::is('apartamento') ? 'active' : 'link-body-emphasis' }}">
-				Apartamentos
-			</a>
-		</li>
-		<li>
-			<a href="#" class="nav-link link-body-emphasis">
-				Condominios
-			</a>
-		</li>
-		<li>
-			<a href="#" class="nav-link link-body-emphasis">
-				Moradores
-			</a>
-		</li>
-		<li>
-			<a href="#" class="nav-link link-body-emphasis">
-				Roles
-			</a>
-		</li>
-		<li>
-			<a href="#" class="nav-link link-body-emphasis">
-				Sindicos
-			</a>
-		</li>
+		@can('isAdmin', Auth::user())
+			<li class="nav-item">
+				<a href="{{ route('apartamento') }}"
+				   class="nav-link {{ Route::is('apartamento') ? 'active' : 'link-body-emphasis' }}">
+					Apartamentos
+				</a>
+			</li>
+			<li>
+				<a href="#" class="nav-link link-body-emphasis">
+					Condominios
+				</a>
+			</li>
+			<li>
+				<a href="#" class="nav-link link-body-emphasis">
+					Moradores
+				</a>
+			</li>
+			<li>
+				<a href="#" class="nav-link link-body-emphasis">
+					Roles
+				</a>
+			</li>
+		@endcan
+		@can(['isAdminOrSindico'], Auth::user())
+			<li>
+				<a href="#" class="nav-link link-body-emphasis">
+					Sindicos
+				</a>
+			</li>
+		@endcan
 	</ul>
-	<hr>
+
 	<ul class="nav nav-pills flex-column mb-auto">
-		<li class="nav-item">
-			<a href="/" class="nav-link link-body-emphasis">
-				Vincular morador ao apartamento
-			</a>
-		</li>
-		<li>
-			<a href="#" class="nav-link link-body-emphasis">
-				Vincular sindico ao condomínio
-			</a>
-		</li>
+		@can('isAdmin', Auth::user())
+			<hr>
+			<li class="nav-item">
+				<a href="/" class="nav-link link-body-emphasis">
+					Vincular morador ao apartamento
+				</a>
+			</li>
+			<li>
+				<a href="#" class="nav-link link-body-emphasis">
+					Vincular sindico ao condomínio
+				</a>
+			</li>
+		@endcan
 	</ul>
 	<hr>
 	<div class="d-flex flex-row justify-content-between">
-		<a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none">
-			<strong>Usuário</strong>
+		<a href="#" class="d-flex flex-column link-body-emphasis text-decoration-none">
+			<div>
+				<strong>Login: </strong><span>{{ Auth::user()->login }}</span>
+			</div>
+			<div>
+				<strong>Perfil: </strong><span>{{ Auth::user()->role->nome}}</span>
+			</div>
 		</a>
-		<a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+		<a href="{{ route('logout') }}" class="d-flex align-items-center link-body-emphasis text-decoration-none">
 			<strong>Sair</strong>
 		</a>
 	</div>

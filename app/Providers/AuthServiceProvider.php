@@ -19,5 +19,9 @@ class AuthServiceProvider extends ServiceProvider {
 		Gate::define('isSindico', function (Usuario $usuario) {
 			return $usuario->role->nome == env('ROLE_SINDICO');
 		});
+
+		Gate::define('isAdminOrSindico', function (Usuario $usuario) {
+			return $usuario->role->nome == env('ROLE_ADMIN') || env('ROLE_SINDICO');
+		});
 	}
 }
