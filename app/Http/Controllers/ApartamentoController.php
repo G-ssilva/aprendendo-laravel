@@ -9,11 +9,13 @@ use Illuminate\View\View;
 
 class ApartamentoController {
 
-	public function index (): View {
-		return view('cadastroApartamento')->with('apartamentos', Apartamento::all());
+	public function index(): View {
+		return view('apartamento')
+				->with('apartamentos', Apartamento::all())
+				->with('paginaAtual', 'apartamento');
 	}
 
-	public function cadastrar (Request $request): RedirectResponse {
+	public function cadastrar(Request $request): RedirectResponse {
 
 		$request->validate([
 				'bloco' => ['required', 'max:255'],
@@ -36,7 +38,7 @@ class ApartamentoController {
 				'numero' => $request->get('numero'),
 		]);
 
-		return redirect(route('cadastroApartamento'));
+		return redirect(route('apartamento'));
 	}
 
 }

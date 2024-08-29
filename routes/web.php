@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-	return view('welcome');
+	return view('home');
 })->name('welcome');
 
 Route::get('/popularBanco', [PopularBancoController::class, 'popularBanco'])->name('popularBanco');
@@ -39,9 +39,8 @@ Route::post('/cadastrarSindico', [SindicoController::class, 'cadastrar'])->name(
 Route::get('/cadastroCondominio', [CondominioController::class, 'index'])->name('cadastroCondominio');
 Route::post('/cadastrarCondominio', [CondominioController::class, 'cadastrar'])->name('cadastrarCondominio');
 
-Route::get('/cadastroApartamento', [ApartamentoController::class, 'index'])->name('cadastroApartamento');
+Route::get('/apartamento', [ApartamentoController::class, 'index'])->name('apartamento');
 Route::post('/cadastrarApartamento', [ApartamentoController::class, 'cadastrar'])->name('cadastrarApartamento');
-
 
 Route::get('/cadastroRole', [RoleController::class, 'index'])->name('cadastroRole');
 Route::post('/cadastrarRole', [RoleController::class, 'cadastrar'])->name('cadastrarRole');
