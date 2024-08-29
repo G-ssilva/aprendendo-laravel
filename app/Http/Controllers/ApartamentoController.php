@@ -18,8 +18,8 @@ class ApartamentoController {
 	public function cadastrar(Request $request): RedirectResponse {
 
 		$request->validate([
-				'bloco' => ['required', 'max:255'],
-				'numero' => ['required', 'max:255',
+				'bloco' => ['required', 'max:10'],
+				'numero' => ['required', 'max:8',
 						function ($attribute, $value, $fail) use ($request) {
 							$exists = Apartamento::query()
 									->where('bloco', $request->get('bloco'))

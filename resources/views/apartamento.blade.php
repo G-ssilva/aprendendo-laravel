@@ -17,7 +17,8 @@
 					<input class="form-control form-control-lg" style="width: 400px" type="text" id="bloco" name="bloco"
 						   value="{{ old('bloco') }}"
 						   required
-						   placeholder="@error('bloco'){{ $message }}@enderror"/>
+						   placeholder="@error('bloco'){{ $message }}@enderror"
+						   maxlength="10"/>
 				</div>
 				<div class="mb-2">
 					<label for="numero" class="form-label">Número:</label>
@@ -25,7 +26,8 @@
 						   name="numero"
 						   value="{{ old('numero') }}"
 						   required
-						   placeholder="@error('numero'){{ $message }}@enderror"/>
+						   placeholder="@error('numero'){{ $message }}@enderror"
+						   maxlength="8"/>
 				</div>
 				<div class="mb-2">
 					<input class="btn btn-success fs-5" style="width: 150px" type="submit" value="Cadastrar">
