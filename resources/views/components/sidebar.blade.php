@@ -12,7 +12,8 @@
 				</a>
 			</li>
 			<li>
-				<a href="#" class="nav-link link-body-emphasis">
+				<a href="{{ route('condominio') }}"
+				   class="nav-link {{ Route::is('condominio') ? 'active' : 'link-body-emphasis' }}">
 					Condominios
 				</a>
 			</li>

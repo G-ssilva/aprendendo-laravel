@@ -1,0 +1,1 @@
+<input class="btn btn-success fs-5" style="width: 150px" type="submit" value="Cadastrar">
