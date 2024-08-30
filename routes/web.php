@@ -36,7 +36,7 @@ Route::post('/cadastrarMorador', [MoradorController::class, 'cadastrar'])->name(
 Route::get('/cadastroSindico', [SindicoController::class, 'index'])->name('cadastroSindico');
 Route::post('/cadastrarSindico', [SindicoController::class, 'cadastrar'])->name('cadastrarSindico');
 
-Route::get('/cadastroCondominio', [CondominioController::class, 'index'])->name('cadastroCondominio');
+Route::get('/condominio', [CondominioController::class, 'index'])->name('condominio');
 Route::post('/cadastrarCondominio', [CondominioController::class, 'cadastrar'])->name('cadastrarCondominio');
 
 Route::get('/apartamento', [ApartamentoController::class, 'index'])->name('apartamento');
