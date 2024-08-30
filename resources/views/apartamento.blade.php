@@ -13,7 +13,7 @@
 				  action="/cadastrarApartamento">
 				@csrf
 				<div class="mb-2">
-					<label for="bloco" class="form-label">Bloco:</label>
+					<label class="form-label" for="bloco">Bloco:</label>
 					<input class="form-control form-control-lg" style="width: 400px" type="text" id="bloco" name="bloco"
 						   value="{{ old('bloco') }}"
 						   required
@@ -21,7 +21,7 @@
 						   maxlength="10"/>
 				</div>
 				<div class="mb-2">
-					<label for="numero" class="form-label">Número:</label>
+					<label class="form-label" for="numero">Número:</label>
 					<input class="form-control form-control-lg" style="width: 400px" type="text" id="numero"
 						   name="numero"
 						   value="{{ old('numero') }}"
@@ -30,7 +30,7 @@
 						   maxlength="8"/>
 				</div>
 				<div class="mb-2">
-					<input class="btn btn-success fs-5" style="width: 150px" type="submit" value="Cadastrar">
+					@include('components.buttonCadastrar')
 				</div>
 			</form>
 		</div>
@@ -47,11 +47,10 @@
 							<div class="d-flex flex-column p-3 border border-primary-subtle rounded"
 								 style="width: 300px; height: 150px">
 								<span class="fw-bold">Apartamento ID {{ $apartamento->id }}</span>
-								<span class="">Bloco: {{ $apartamento->bloco }}</span>
-								<span class="">Número: {{ $apartamento->numero }}</span>
+								<span>Bloco: {{ $apartamento->bloco }}</span>
+								<span>Número: {{ $apartamento->numero }}</span>
 							</div>
 						</div>
-
 					@endforeach
 				</div>
 			</div>

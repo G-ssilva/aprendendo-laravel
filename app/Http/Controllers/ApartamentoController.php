@@ -11,8 +11,7 @@ class ApartamentoController {
 
 	public function index(): View {
 		return view('apartamento')
-				->with('apartamentos', Apartamento::all())
-				->with('paginaAtual', 'apartamento');
+				->with('apartamentos', Apartamento::all());
 	}
 
 	public function cadastrar(Request $request): RedirectResponse {
